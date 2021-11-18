@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ad"></div>
+    <div class="cd"></div>
+    <script>
+        function c(){
+            d=new Date();
+            hour=d.getHours();
+            minute=d.getMinutes();
+            second=d.getSeconds();
+
+            day=d.getDay();
+            date=d.getDate();
+            console.log(day)
+            month=d.getMonth();
+            year=d.getFullYear();
+            console.log(year)
+
+            switch(day){
+             case 0:
+               day="sunday"
+               break;
+
+               case 1:
+                   day="Monday"
+                   break;
+
+                case 2:  
+                    day="Tuesday"
+                    break;
+
+                case 3:
+                    day="Wednesday"
+                    break;
+                case 4: 
+                    day="Thursday"
+                    break;    
+                case 5: 
+                    day="Friday"
+                    break;
+                case 6: 
+                    day="Saturday"
+                    break;    
+            }
+            console.log(day)
+            if(minute<10){
+               minute= "0" + minute
+            }
+            if(second<10){
+                second="0"+second
+            }
+            document.querySelector(".ad").innerText=hour +":"+minute+":"+second;
+            document.querySelector(".cd").innerText=day+ "-"+ date+"-"+ month +"-"+ year
+        }
+        c()
+        setInterval(c,1000)
+    </script>
+</body>
+</html>
