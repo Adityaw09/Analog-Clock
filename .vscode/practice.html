@@ -1,66 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.parallax {
+  /* The image used */
+  background-image: url("");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
-    <div class="ad"></div>
-    <div class="cd"></div>
-    <script>
-        function c(){
-            d=new Date();
-            hour=d.getHours();
-            minute=d.getMinutes();
-            second=d.getSeconds();
 
-            day=d.getDay();
-            date=d.getDate();
-            console.log(day)
-            month=d.getMonth();
-            year=d.getFullYear();
-            console.log(year)
+<p>Scroll Up and Down this page to see the parallax scrolling effect.</p>
 
-            switch(day){
-             case 0:
-               day="sunday"
-               break;
+<div class="parallax"></div>
 
-               case 1:
-                   day="Monday"
-                   break;
+<div style="height:1000px;background-color:red;font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
 
-                case 2:  
-                    day="Tuesday"
-                    break;
-
-                case 3:
-                    day="Wednesday"
-                    break;
-                case 4: 
-                    day="Thursday"
-                    break;    
-                case 5: 
-                    day="Friday"
-                    break;
-                case 6: 
-                    day="Saturday"
-                    break;    
-            }
-            console.log(day)
-            if(minute<10){
-               minute= "0" + minute
-            }
-            if(second<10){
-                second="0"+second
-            }
-            document.querySelector(".ad").innerText=hour +":"+minute+":"+second;
-            document.querySelector(".cd").innerText=day+ "-"+ date+"-"+ month +"-"+ year
-        }
-        c()
-        setInterval(c,1000)
-    </script>
 </body>
 </html>
